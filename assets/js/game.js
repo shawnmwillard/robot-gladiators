@@ -1,16 +1,20 @@
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//  * Fight all enemy-robots
+//  * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
+
 let playerName = window.prompt("What is your robot's name?");
 let playerHealth = 100;
 let playerAttack = 10;
 let playerMoney = 10;
 
-// You can also console.log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
-let enemyName = "Roborto";
+let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 let enemyHealth = 50;
 let enemyAttack = 12;
 
-var fight = function () {
+const fight = function (enemyName) {
+  // fight function statements
   window.alert("Welcome to Robot Gladiators");
   let promptFight = window.prompt(
     "Would you like to FIGHT or SKIP this battle? Enter FIGHT or SKIP to choose."
@@ -33,7 +37,7 @@ var fight = function () {
 
     // check enemy's health
     if (enemyHealth <= 0) {
-      window.alert(enemyName + " has died!");
+      window.alert(+" has died!");
     } else {
       window.alert(enemyName + " still has " + enemyHealth + " health left.");
     }
@@ -45,6 +49,7 @@ var fight = function () {
         " attacked " +
         playerName +
         ". " +
+        playerName +
         " now has " +
         playerHealth +
         " health remaining."
@@ -77,4 +82,6 @@ var fight = function () {
   }
 };
 
-fight();
+for (var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
