@@ -83,8 +83,19 @@ var fight = function (enemy) {
     }
   } // end of while loop
 }; // end of fight function
+let getPlayerName = function () {
+  let name = "";
+
+  while (name === "" || null) {
+    name = prompt("What is your Robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+};
+
 let playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
