@@ -99,7 +99,7 @@ let getPlayerName = function () {
   return name;
 };
 
-let playerInfo = {
+var playerInfo = {
   name: getPlayerName(),
   health: 100,
   attack: 10,
