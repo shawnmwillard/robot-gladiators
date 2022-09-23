@@ -88,6 +88,46 @@ let fight = function (enemy) {
     }
   } // end of while loop
 }; // end of fight function
+let getPlayerName = function () {
+  let name = "";
+
+  while (name === "" || null) {
+    name = prompt("What is your Robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+};
+
+let playerInfo = {
+  name: getPlayerName(),
+  health: 100,
+  attack: 10,
+  money: 10,
+  reset: function () {
+    this.health = 100;
+    this.money = 10;
+    this.attack = 10;
+  }, // comma!
+  refillHealth: function () {
+    if (this.money >= 7) {
+      window.alert("Refilling player's health by 20 for 7 dollars.");
+      this.health += 20;
+      this.money -= 7;
+    } else {
+      window.alert("You don't have enough money!");
+    }
+  }, //comma!
+  upgradeAttack: function () {
+    if (this.money >= 7) {
+      window.alert("Upgrading player's attack by 6 for 7 dollars.");
+      this.attack += 6;
+      this.money -= 7;
+    } else {
+      window.alert("You don't have enough money!");
+    }
+  },
+};
 
 // function to start a new game
 let startGame = function () {
